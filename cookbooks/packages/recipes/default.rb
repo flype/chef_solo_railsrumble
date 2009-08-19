@@ -19,4 +19,4 @@ end
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 
-include_recipe "ntp"
+# include_recipe "ntp::server"

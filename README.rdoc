@@ -16,10 +16,12 @@ it will fetch by getting a tarball from a remote URL.
 == Tested
 
 Ubuntu
-  8.10
-  8.10 x86 64-bit
   8.04 LTS
   8.04 LTS 64bit
+  8.10
+  8.10 x86 64-bit
+  9.04
+  9.04 64bit
 Debian
   4.0
   4.0 64bit
@@ -32,7 +34,11 @@ Be sure to fork this repository adding your pubkey to cookbooks/users/files/defa
 otherwise you cannot log into the VM (SSH as root is disabled by chef_solo_os).
 
 On host:
-  * apt-get install wget
+  Uncomment the following lines from /etc/apt/sources.list :
+    deb http://us.archive.ubuntu.com/ubuntu/ jaunty universe
+    deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty universe
+
+  * apt-get update && apt-get install wget
   * wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh && cd /tmp && git clone git://github.com/retr0h/chef_solo_railsrumble.git && cd chef_solo_railsrumble && rake solo
 
 == Caveats
