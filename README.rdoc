@@ -42,3 +42,5 @@ On host:
 
   * Develop a better mechanism to bootstrap the system.
   * Does not set the system's hostname.
+  * Figure out why opscode/cookbook/ntp has issues running under chef-solo.
+  * Include apache & nginx cookbooks from opscode once ntp cookbook resolved.
