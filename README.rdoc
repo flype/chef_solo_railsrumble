@@ -40,4 +40,5 @@ On host:
 
 == Caveats
 
+  * Develop a better mechanism to bootstrap the system.
   * Does not set the system's hostname.
