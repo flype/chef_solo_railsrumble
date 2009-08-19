@@ -1,10 +1,13 @@
 = chef_solo_os
 
-This repository is used to build a generic server via Chef Solo.
-You can then use the following repositories to create accounts, setup
-Apache +passenger, and your virtualhosts.
-  http://github.com/retr0h/chef_solo_accounts/tree/master
-  http://github.com/retr0h/chef_solo_apache2/tree/master
+This repository is used to quickly build an Ubuntu Rails Linode VPS for RailsRumble via Chef Solo.
+Includes:
+  Mysql 5
+  Apache2 +Passenger
+  Nginx +Passenger
+
+A deploy user is generated and assumes you will deploy your app to /var/www/sites/u/app/.
+The deploy user has access to sudo via nopasswd.
 
 Chef Solo allows you to run Chef Cookbooks in the absence of a Chef Server.
 It does this by requiring that the complete cookbook be present on disk, which
@@ -25,12 +28,12 @@ Debian
 
 == Installation
 
-  * wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh
+Be sure to fork this repository adding your pubkey to cookbooks/users/files/default/deploy.pub,
+otherwise you cannot log into the VM (SSH as root is disabled by chef_solo_os).
 
-== TODO
+On host:
+  * wget http://gist.github.com/raw/132506/986dddee9b9c4c14e8de147abc17b95644684219/gistfile1.txt -O - | sh && cd /tmp && git clone git://github.com/retr0h/chef_solo_railsrumble.git && cd chef_solo_railsrumble && rake solo
 
-  * Does not set the system's hostname and other miscellaneous items.
-  * Setup /etc/default/locale with proper locale information.
-  LANG="en_US.utf8"
-  LANGUAGE="en_US.utf8"
-  LC_ALL="en_US.utf8"
+== Caveats
+
+  * Does not set the system's hostname.

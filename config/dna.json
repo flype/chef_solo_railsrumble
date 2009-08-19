@@ -1,0 +1,28 @@
+{
+  "user":"root",
+  "packages":[
+    "apache2", "apache2-threaded-dev", "libapache2-mod-passenger", "nginx", "nginx-brightbox"
+  ],
+  "gems":[
+    {
+      "name":"rails",
+      "version": "2.3.3"
+    },
+    {
+      "name":"passenger",
+      "version": "2.2.4"
+    },
+    {
+      "name":"mysql",
+      "version": "2.7"
+    }
+  ],
+  "users":[
+    {
+      "username":"deploy",
+      "homedir":["/var/www/sites/u/apps"],
+      "shell":"/bin/zsh"
+    }
+  ],
+  "recipes":["packages", "gems", "users"]
+}
