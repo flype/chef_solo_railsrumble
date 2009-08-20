@@ -19,11 +19,13 @@ end
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 
-include_recipe "ntp::server"
+include_recipe "ntp"
+
+include_recipe "apache2"
 
 remote_file "/etc/sudoers" do
   source "sudoers"
   mode 0440
-  owner root
-  group root
+  owner "root"
+  group "root"
 end
