@@ -21,7 +21,7 @@ include_recipe "mysql::server"
 
 include_recipe "ntp"
 
-include_recipe "apache2"
+# include_recipe "apache2"
 
 remote_file "/etc/sudoers" do
   source "sudoers"
