@@ -1,7 +1,7 @@
 {
   "user":"root",
   "packages":[
-    "apache2", "apache2-threaded-dev", "libapache2-mod-passenger", "nginx", "nginx-brightbox"
+		"screen", "nginx"
   ],
   "gems":[
     {
@@ -20,8 +20,8 @@
   "users":[
     {
       "username":"deploy",
-      "homedir":["/var/www/sites/u/apps"],
-      "shell":"/bin/zsh"
+      "homedir":["/var/www/rumble/app/"],
+      "shell":"/bin/bash"
     }
   ],
   "recipes":["packages", "gems", "users"]

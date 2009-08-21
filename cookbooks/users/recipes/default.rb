@@ -31,10 +31,10 @@ node[:users].each do |user|
     group user[:username]
   end
 
-  remote_file "#{homedir}/.zshrc" do
-    source "zshrc"
-    mode 0400
-    owner user[:username]
-    group user[:username]
-  end
+  # remote_file "#{homedir}/.zshrc" do
+  #   source "zshrc"
+  #   mode 0400
+  #   owner user[:username]
+  #   group user[:username]
+  # end
 end
